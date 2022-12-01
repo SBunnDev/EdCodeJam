@@ -1,0 +1,75 @@
+<FlashLayout>
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 1
+            Image:
+                source: 'banner300dpidark.png'
+
+        GridLayout:
+            cols: 1
+            Label:
+                id: display
+                text: "Tabs not currently enabled, sorry Dvorak enthusiasts!"
+
+        GridLayout:
+            cols: 2
+            padding: 20
+
+            Label:
+                id: questLabel
+                text: "Pleast type your question"
+
+            TextInput:
+                id: questText
+                multiline: False
+
+            Label:
+                id: ansLabel
+                text: "Pleast type the correct answer"
+
+            TextInput:
+                id: ansText
+                multiline: False
+
+            Label:
+                id: falseLabelA
+                text: "Please type an incorrect answer"
+
+            TextInput:
+                id: incTextA
+                multiline: False
+
+            Label:
+                id: falseLabelB
+                text: "Please type another incorrect answer"
+
+            TextInput:
+                id: incTextB
+                multiline: False
+
+            Label:
+                id: falseLabelC
+                text: "Please type a VERY incorrect answer"
+
+            TextInput:
+                id: incTextC
+                multiline: False
+
+        GridLayout:
+            cols: 2
+            size: root.width, root.height
+            padding: 50
+            spacing: 20
+
+            Button:
+                id: submit
+                text: "Submit Question"
+                on_press: app.append_json()
+
+            Button:
+                text: "Clear Questions"
+                on_press: app.clear_json()
